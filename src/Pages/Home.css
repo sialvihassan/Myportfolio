@@ -1,0 +1,159 @@
+/* Home Page Styling */
+.home-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url('https://images.unsplash.com/photo-1658604663578-04634f4cb897?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Replace with a futuristic background */
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+/* Dark Overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6); /* Add dark transparency */
+  z-index: 1;
+}
+
+/* Content Wrapper */
+.content {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  padding: 40px;
+  color: #fff;
+  z-index: 2;
+}
+
+/* Text Styling */
+.text-content h1 {
+  font-size: 3.5em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  line-height: 1.2;
+  color: white;
+}
+
+.highlight {
+  color: #79e7ed; /* Golden highlight for modern effect */
+  text-shadow: 0 0 5px #44dbe3, 0 0 10px #44dbe3, 0 0 15px #44dbe3, 0 0 20px #44dbe3; /* Glowing effect */
+  animation: glowAnimation 1.5s infinite alternate; /* Animation for the glow effect */
+}
+
+/* Glowing Animation */
+@keyframes glowAnimation {
+  0% {
+    text-shadow: 0 0 5px #44dbe3, 0 0 10px #44dbe3, 0 0 15px #44dbe3, 0 0 20px #44dbe3;
+  }
+  50% {
+    text-shadow: 0 0 15px #44dbe3, 0 0 30px #44dbe3, 0 0 45px #44dbe3, 0 0 60px #44dbe3;
+  }
+  100% {
+    text-shadow: 0 0 5px #44dbe3, 0 0 10px #44dbe3, 0 0 15px #44dbe3, 0 0 20px #44dbe3;
+  }
+}
+
+
+.text-content h2 {
+  font-size: 1.8em;
+  font-weight: 400;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.text-content p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #ffffff;
+  max-width: 600px;
+}
+
+/* Cyberpunk Button Styling */
+.cyberpunk-btn {
+  padding: 12px 35px;
+  background: linear-gradient(135deg, #ff00ff, #00e5ff); /* Neon purple to neon blue gradient */
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: 700;
+  border: none;
+  border-radius: 50px; /* Rounded button */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6); /* Slight shadow for depth */
+}
+
+.cyberpunk-btn i {
+  margin-right: 10px;
+  font-size: 1.5em;
+  color: #fff;
+}
+
+/* Hover Effect */
+.cyberpunk-btn:hover {
+  transform: scale(1.1); /* Slight increase in size */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8); /* Deep shadow on hover */
+}
+
+/* Neon Glow Effect */
+.cyberpunk-btn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 50%;
+}
+
+.cyberpunk-btn:hover::before {
+  opacity: 0.3; /* Glow effect on hover */
+}
+
+
+/* Profile Image Styling */
+.image-content .profile-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease;
+}
+
+.image-content .profile-image:hover {
+  transform: rotate(5deg) scale(1.05); /* 3D hover effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .text-content h1 {
+    font-size: 2.5em;
+  }
+  
+  .image-content {
+    margin-top: 20px;
+  }
+}

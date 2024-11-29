@@ -1,0 +1,190 @@
+/* Updated About Page Styles with Cyberpunk Flair */
+
+/* Container Styling */
+.about-container {
+  padding: 70px;
+  max-width: 1200px;
+  margin: auto;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #ff3a69, #00bcd4); /* Neon gradient for a cyberpunk look */
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  color: #fff;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.about-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 20px;
+  animation: glow 3s ease-in-out infinite;
+}
+
+.about-container:hover {
+  transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+/* Header Styling */
+h1 {
+  font-size: 3em;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 50px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Section Styling */
+.about-content > section {
+  background: rgba(0, 0, 0, 0.6); /* Dark transparent background for section */
+  padding: 35px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  margin-bottom: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-content > section:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Introduction Section */
+.introduction h2 {
+  font-size: 2.2em;
+  color: #00bcd4;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.introduction p {
+  font-size: 1.2em;
+  line-height: 1.7;
+  color: #ccc;
+  margin-top: 10px;
+  text-align: justify;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Skills Section */
+.skills h2 {
+  font-size: 2.2em;
+  color: #00bcd4;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+}
+
+/* Skill Bars */
+.skill-bar {
+  margin: 20px 0;
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #ddd;
+}
+
+.progress-bar {
+  width: 100%;
+  background-color: #333;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.progress-bar span {
+  display: block;
+  height: 18px;
+  border-radius: 12px;
+  transition: width 0.6s ease;
+  animation: fillSkill 2s ease forwards;
+}
+
+/* Skill Levels with Neon Highlights */
+.html-skill { background-color: #ff4b82; --skill-width: 90%; } /* Neon pink */
+.javascript-skill { background-color: #ffdd00; --skill-width: 85%; } /* Neon yellow */
+.react-skill { background-color: #00e5ff; --skill-width: 80%; } /* Neon blue */
+.nodejs-skill { background-color: #39ff14; --skill-width: 75%; } /* Neon green */
+
+/* Skill Bar Animation */
+@keyframes fillSkill {
+  from { width: 0; }
+  to { width: var(--skill-width); }
+}
+
+/* Fun Facts Section */
+.fun-facts h2 {
+  font-size: 2.2em;
+  color: #ff3a69;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+}
+
+.fun-facts ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.fun-facts li {
+  font-size: 1.3em;
+  margin: 15px 0;
+  color: #fff;
+  position: relative;
+  padding-left: 35px;
+  letter-spacing: 1px;
+}
+
+.fun-facts li::before {
+  content: "💥"; /* Use explosion emoji for fun fact icons */
+  position: absolute;
+  left: 0;
+  font-size: 1.8em;
+  color: #ff3a69;
+  animation: pulse 1.5s infinite alternate;
+}
+
+/* Fun Facts Icon Pulsing Effect */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-container {
+    padding: 40px;
+  }
+
+  h1 {
+    font-size: 2.4em;
+  }
+
+  .introduction h2, .skills h2, .fun-facts h2 {
+    font-size: 1.8em;
+  }
+
+  .skill-bar label {
+    font-size: 1.1em;
+  }
+
+  .progress-bar span {
+    height: 14px;
+  }
+
+  .fun-facts li {
+    font-size: 1.1em;
+  }
+}
